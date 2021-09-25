@@ -22,23 +22,25 @@ const Cards = () => {
     <Container maxWidth={false}>
       <div style={{ paddingTop: '2vh' }} />
       <Grid container spacing={2}>
-        {data?.records.map((item) => (
-          <Grid item xs={12} sm={6} md={4}>
-            <Card
-              key={item.id}
-              creditline={item.creditline}
-              images={item.images}
-              url={item.url}
-              century={item.century}
-              culture={item.culture}
-              title={item.title}
-              technique={item.technique}
-            />
-          </Grid>
-        ))}
+        {data?.records.map((item) => {
+          if (item.images.length === 0) return null;
+          return (
+            <Grid item xs={12} sm={6} md={4} key={item.id}>
+              <Card
+                creditline={item.creditline}
+                images={item.images}
+                url={item.url}
+                century={item.century}
+                culture={item.culture}
+                title={item.title}
+                technique={item.technique}
+              />
+            </Grid>
+          );
+        })}
       </Grid>
       <Grid
-        justify="center"
+        justifyContent="center"
         container
         style={{ marginTop: '2vh', marginBottom: '4vh' }}
       >
