@@ -8,6 +8,13 @@ This project receives data from an api and renders it in a grid of cards.
 yarn install
 ```
 
+You will need a `.env` file at the root of your project containing the following:
+
+```bash
+apikey=YOUR-KEY-HERE
+PORT=5000
+```
+
 ## Usage
 
 ```bash
@@ -20,7 +27,7 @@ yarn start
 yarn test
 ```
 
-## Contributing
+## Problems
 
 I struggled to get the ElasticSearch to filter empty arrays of images. This means now that the filtering happens on the client, so sometimes the pagination shows fewer than 10 results.
 
