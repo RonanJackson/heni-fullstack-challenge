@@ -1,4 +1,4 @@
-import axios from 'axios';
+const axios = require('axios');
 
 const BASE_URL = 'https://api.harvardartmuseums.org';
 
@@ -9,4 +9,4 @@ const getPrints = async (page) => {
   return res.data;
 };
 
-export { getPrints };
+module.exports = { getPrints };

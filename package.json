@@ -7,7 +7,10 @@
     "start": "concurrently \"yarn run server\" \"yarn run client\"",
     "server": "node server.js",
     "client": "cd client && yarn start",
-    "install": "cd client && yarn install && cd .."
+    "install": "cd client && yarn install && cd ..",
+    "test-client": "cd client && yarn run test",
+    "test-server": "NODE_ENV=test mocha **/*.test.js",
+    "test": "yarn run test-server && yarn run test-client"
   },
   "dependencies": {
     "axios": "^0.21.4",
@@ -15,7 +18,10 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "concurrently": "^6.2.1"
-  },
-  "type": "module"
+    "chai": "^4.3.4",
+    "concurrently": "^6.2.1",
+    "mocha": "8.3.2",
+    "nock": "^13.1.3",
+    "supertest": "^6.1.6"
+  }
 }

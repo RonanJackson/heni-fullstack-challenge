@@ -4,4 +4,4 @@ const checkApiKey = (req, res, next) => {
   else next();
 };
 
-export { checkApiKey };
+module.exports = { checkApiKey };

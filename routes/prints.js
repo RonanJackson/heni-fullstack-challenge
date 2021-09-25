@@ -1,6 +1,6 @@
-import express from 'express';
-import { getPrints } from '../services/prints.js';
-import { checkApiKey } from '../middlewares/key.js';
+const express = require('express');
+const { getPrints } = require('../services/prints.js');
+const { checkApiKey } = require('../middlewares/key.js');
 
 const printsRouter = express.Router();
 
@@ -14,4 +14,4 @@ printsRouter.get('/', checkApiKey, async (req, res) => {
   }
 });
 
-export default printsRouter;
+module.exports = { printsRouter };
