@@ -1,10 +1,16 @@
 import { Container, Grid } from '@material-ui/core';
-import React from 'react';
+import React, { useState } from 'react';
+import Pagination from '@material-ui/lab/Pagination';
 import { useGetPrints } from './util/printsApi';
 import Card from './Card';
 
 const Cards = () => {
-  const { isLoading, isError, error, data } = useGetPrints();
+  const [page, setPage] = useState(1);
+  const { isLoading, isError, error, data } = useGetPrints(page);
+
+  const paginate = (e, value) => {
+    setPage(value);
+  };
 
   if (isLoading) return <p>Loading Prints...</p>;
   if (isError) {
@@ -31,7 +37,13 @@ const Cards = () => {
           </Grid>
         ))}
       </Grid>
-      <div style={{ paddingTop: '2vh' }}>test</div>
+      <Grid
+        justify="center"
+        container
+        style={{ marginTop: '2vh', marginBottom: '4vh' }}
+      >
+        <Pagination page={page} count={data.info.pages} onChange={paginate} />
+      </Grid>
     </Container>
   );
 };
