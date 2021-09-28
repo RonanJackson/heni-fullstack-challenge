@@ -21,6 +21,14 @@ PORT=5000
 yarn start
 ```
 
+Or if you wish to use Docker:
+
+```bash
+docker-compose up --build
+```
+
+You should be able to view the app on http://localhost:3000 with the server on http://localhost:5000
+
 ## Testing
 
 ```bash
