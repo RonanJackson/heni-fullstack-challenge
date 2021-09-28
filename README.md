@@ -27,7 +27,7 @@ Or if you wish to use Docker:
 docker-compose up --build
 ```
 
-You should be able to view the app on http://localhost:3000 with the server on http://localhost:5000
+You should be able to view the app on http://localhost:3000 with the server on http://localhost:5000/prints
 
 ## Testing
 
